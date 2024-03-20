@@ -69,6 +69,9 @@
   </div>
   <script>
     document.getElementById('play-button').addEventListener('click', function() {
+      var iframe = document.querySelector('#video-popup iframe');
+      var playerWindow = iframe.contentWindow;
+      playerWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
       document.getElementById('video-popup').style.display = 'block';
     });
 
@@ -78,5 +81,3 @@
   </script>
 </body>
 </html>
-
-
