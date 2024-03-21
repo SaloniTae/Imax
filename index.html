@@ -1,83 +1,1365 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube Video Player</title>
+  <meta charset="utf-8">
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Demo styles -->
   <style>
-    body {
-      background-color: black;
-      margin: 0;
-      font-family: Arial, sans-serif;
+      
+      @font-face {
+      font-family: 'Polly-Regular';
+      src: url('https://dl.dropboxusercontent.com/scl/fi/h3jo5p47lh2oul5mky6c2/Polly-Regular.otf?rlkey=tcpku2avzd8bvsz0ppewzlh47&dl=0') format('truetype');
+    }
+      
+      @font-face {
+      font-family: 'NexaBold';
+      src: url('https://dl.dropboxusercontent.com/scl/fi/t3bdfdb4kmudm7gs5dm41/NexaText-Trial-Bold.ttf?rlkey=8ndeqdpbjbom7vu05b930mao6&dl=0') format('truetype');
+    }
+    
+      @font-face {
+      font-family: 'NexaExtraBold';
+      src: url('https://dl.dropboxusercontent.com/scl/fi/keilxq4ic0fgu9u48egnn/Nexa-Trial-ExtraBold.ttf?rlkey=3idcnyksf1aqebrhlacj8wylx&dl=0') format('truetype');
+    }
+    
+      @font-face {
+      font-family: 'NexaRegular';
+      src: url('https://dl.dropboxusercontent.com/scl/fi/i9i3thr6d1iaebtsmoc79/Nexa-Trial-Regular.ttf?rlkey=ktvy8ntvptrvnc8hu1ql6gb7c&dl=0') format('truetype');
+    }
+    
+    @font-face {
+      font-family: 'NexaLight';
+      src: url('https://dl.dropboxusercontent.com/scl/fi/r8e4s4fr3m9jgy9oqnthd/Nexa-Trial-Light.ttf?rlkey=s5h1s59j6qfr0hknip8ff790t&dl=0') format('truetype');
+    }
+    
+    
+     html,
+body {
+  position: relative;
+  height: 100%;
+  
+}
+
+
+
+body {
+  background: #000;
+  font-size: 0.875rem; /* Converted from 14px */
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  
+  
+}
+
+/* Swiper Container Styles */
+.swiper-container {
+  width: 100%;
+  height: 56.25vw; /* Converted from 56.25vw */
+  max-height: 60vh;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow-x: clip;
+}
+
+/* Slide Styles */
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 10;
+ 
+}
+
+/* Text Container Styles */
+.swiper-text-container {
+  position: absolute;
+  bottom: 0.3125rem; /* Converted from 5px */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  background-color: red;
+  padding: 1.5625rem; /* Converted from 25px */
+  
+}
+
+/* Text Styles */
+.swiper-slide-text {
+  font-size: 1.5375rem; /* Converted from 23px */
+  color: #fff;
+  font-family: 'NexaRegular';
+  margin-top: 0.5rem; /* Converted from 8px */
+  margin-left: 0.9375rem; /* Converted from 15px */
+  background: black;
+  padding: 0.3125rem 0.3125rem; /* Converted from 5px 5px */
+}
+
+/* Gallery Thumbs Styles */
+.gallery-thumbs {
+  height: 22%; /* Converted from 22% */
+  box-sizing: border-box;
+  padding: 1.0625rem; /* Converted from 17px */
+  transform: translateY(50%);
+  width: 100%;
+  top: 5.45rem; /* Converted from 100px */
+}
+
+.gallery-thumbs .swiper-slide {
+  opacity: 0.4;
+}
+
+.gallery-thumbs .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.info-container {
+  display: flex;
+  align-items: center;
+}
+
+.film-info {
+  color: #ffffff;
+  font-size: 0.66rem; /* Converted from 0.66rem */
+  padding-top: 0.375rem; /* Converted from 0.375rem */
+  padding-right: 0.5rem; /* Converted from 0.5rem */
+  padding-bottom: 0.375rem; /* Converted from 0.375rem */
+  padding-left: 0.5rem; /* Converted from 0.5rem */
+  font-family: 'NexaExtraBold';
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+}
+
+.film-info-bg {
+  width: 100%;
+  margin-top: 14.9rem; /* Converted from 14.9rem */
+  max-width: 9.052rem; /* Converted from 9.052rem */
+  background-color: #006FCD;
+  display: flex;
+  display: inline-block;
+  margin-left: 0.9rem; /* Converted from 14px */
+  justify-content: center;
+  align-items: center;
+}
+
+.playing-info-bg {
+  display: inline-block;
+}
+
+.playing-info {
+  color: #bdbdbd;
+  font-size: 0.625rem; /* Converted from 10px */
+  text-transform: uppercase;
+  letter-spacing: 0.075rem; /* Converted from 1.2px */
+  font-family: 'NexaRegular';
+}
+
+.divider {
+  border-left: 0.0625rem solid #bdbdbd; /* Converted from 1px */
+  height: 0.8125rem; /* Converted from 13px */
+  margin: 0 0.625rem; /* Converted from 10px */
+  margin-left: 0.0625rem;
+}
+
+.playing-info {
+  margin-top: 13.75rem; /* Converted from 220px */
+}
+
+.playing-info-container {
+  display: flex;
+  align-items: center;
+  margin-top: 14.88rem; /* Converted from 14.88rem */
+  margin-left: 0.4375rem; /* Converted from 7px */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem; /* Converted from 16px */
+  background: black;
+  padding: 0.75rem 0.1875rem; /* Converted from 12px 3px */
+}
+
+.clickable-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 0.9375rem; /* Converted from 15px */
+}
+
+.clickable-container2 {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: 3.4375rem; /* Converted from 55px */
+  
+}
+
+.circle {
+  width: 2rem; /* Converted from 32px */
+  height: 2rem; /* Converted from 32px */
+  background-color: #1976D2;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'NexaBold';
+  color: white;
+  margin-right: 0.625rem; /* Converted from 10px */
+}
+
+.text-next-to-circle,
+.text-next-to-circle2 {
+  font-family: 'NexaRegular';
+  color: white;
+  font-size: 0.8125rem; /* Converted from 13px */
+  letter-spacing: 0.125rem; /* Converted from 2px */
+}
+
+.play-button {
+  width: 0;
+  margin-left: 0.125rem; /* Converted from 2px */
+  height: 0;
+  border-top: 0.3125rem solid transparent; /* Converted from 5px */
+  border-bottom: 0.3125rem solid transparent; /* Converted from 5px */
+  border-left: 0.5rem solid white; /* Converted from 8px */
+}
+
+.circle2 {
+  width: 2rem; /* Converted from 32px */
+  height: 2rem; /* Converted from 32px */
+  border: 0.0688rem solid white; /* Converted from 1.1px */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-next-to-circle2 {
+  font-family: 'NexaRegular';
+  color: white;
+  font-size: 0.8125rem; /* Converted from 13px */
+  letter-spacing: 0.0625rem; /* Converted from 1px */
+  margin-left: 0.625rem; /* Converted from 10px */
+}
+
+.arrow2 {
+  border: solid white;
+  border-width: 0 0.15rem 0.15rem 0; /* Converted from 2.4px */
+  display: inline-block;
+  padding: 0.1563rem; /* Converted from 2.5px */
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-right: 0.1875rem; /* Converted from 3px */
+}
+
+   
+  
+  
+  
+   .swiper-pagination {
+      margin-bottom: 35.4vh;
+  }
+  
+  .swiper-pagination-bullet {
+  width: 84px; /* Bullet width */
+  height: 2px; /* Bullet height */
+  background-color: #63666b; /* Inactive bullet background color */
+  opacity: 0.6; /* Bullet opacity */
+  border-radius: 0px; /* Bullet border radius */
+  margin: 0 3px; /* Horizontal margin between bullets */
+}
+
+
+.swiper-pagination-bullet-active {
+  background-color: #0072ce; /* Active bullet background color */
+  opacity: 1; /* Active bullet opacity */
+}
+
+
+    
+    
+    
+    /* Navbar Styles */
+    .navbar {
+      background-color: #000;
+      padding: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    #play-button {
+    .logo {
+      width: 88px;
+      height: auto;
+      margin-left: 11px
+    }
+
+    .overlay {
+    position: fixed;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 9999;
+    overflow-y: auto;
+    transition: height 0.3s, opacity 0.0s;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu {
+    background-color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    text-align: center;
+   
+  }
+
+  .menu a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 32px; /* font size change for menu */
+    margin-bottom: 10px;
+    text-align: center;
+    margin: 35px 0;
+    font-family: 'NexaRegular';
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+    
+  }
+
+    .close-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: #fff;
+    font-size: 20px;
+    padding: 4px;
+  }
+
+  .open-menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 24px;
+  }
+
+  .bar {
+    width: 50px;
+    height: 2px; /* Set height to 2px for thinner lines */
+    background-color: #fff;
+    margin: 6px 0; /* Adjust margin to center the lines vertically */
+    border-radius: 2px;
+  }
+  
+
+.text-below-thumb1 {
+   position: absolute;
+  top: 8.6rem;
+  left: 0;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  color: #fff; /* Text color */
+  padding: 5px; /* Padding around the text */
+  box-sizing: border-box;
+  font-family: 'NexaRegular';
+  font-size: 24px;
+  letter-spacing: 0.0625rem;
+}
+
+.text-below-thumb2 {
+  position: absolute;
+  top: 55rem; /* Adjusted position */
+  left: 0;
+  width: 100%;
+  height: auto;
+  text-align: left;
+  color: #fff; /* Text color */
+  padding: 5px; /* Padding around the text */
+  box-sizing: border-box;
+  font-family: 'NexaRegular';
+  font-size: 1.55rem;
+  letter-spacing: 1px;
+}
+
+.text-below-thumb3 {
+  position: absolute;
+  top: 124.6rem;
+  left: 0;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  color: #fff; /* Text color */
+  padding: 5px; /* Padding around the text */
+  box-sizing: border-box;
+  font-family: 'NexaRegular';
+  font-size: 1.55rem;
+  letter-spacing: 0.225rem;
+  text-transform: uppercase;
+}
+
+      
+  .container {
       position: absolute;
-      top: 50%;
+      top: 13.6rem; /* Adjusted position */
+      left: 0;
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;        
+      margin: 0;
+    }
+    
+    .movie-box {
+        display: flex;
+        width: 90%;
+        color: white; /* White text color */
+    }
+        
+      
+        
+    .details-container {
+        width: 100%;
+        padding: 10px;
+        font-family: 'NexaLight';
+        display: flex;
+        flex-direction: column;
+    }
+        
+    .movie-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 0.8rem; /* Adjusted font size */
+        font-family: 'NexaExtraBold';
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+            
+    }
+        
+    .movie-time {
+        font-family: 'NexaRegular';
+    }
+        
+    .movie-description {
+        font-family: 'NexaLight';
+        margin-top: 10px;
+        font-size: 0.6rem; /* Adjusted font size */
+        text-align: center;
+    }
+        
+    .timing-container {
+        display: flex;
+        justify-content: space-around; /* Distribute the timing boxes evenly */            
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 0.7rem;
+    }
+        
+    .ampm {
+        font-family: 'NexaExtraBold';
+        margin-left: 0.2em; 
+    }
+        
+    .time-slot {
+        border: 0.5px solid white; /* Decreased opacity of white border for the timing boxes */
+        border-radius: 10px; /* Rounded corners for the timing boxes */
+        width: 30%; /* Width of each timing box */
+        background-color: transparent; /* Transparent background for the timing boxes */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7px 10px;
+        margin: 0 5px; /* Adds a margin of 10 pixels on the left and right */
+        transition: background-color 0.3s; /* Smooth transition for background color */
+        
+        }
+    
+     .time-slot:hover, /* Change color on hover */
+        .time-slot:active { /* Change color on tap */
+            background-color: white; /* Change button color to white */
+            color: black; /* Change font color to black */
+            
+        }
+    
+        
+    .time-slot a {
+            text-decoration: none; /* Remove underline from the links */
+            
+            color: inherit; /* Inherit text color */
+            width: 100%; /* Full width for the links */
+            height: 100%; /* Full height for the links */
+            display: flex; /* Display as flex to center the content vertically */
+            justify-content: center; /* Center the content horizontally */
+            align-items: center; /* Center the content vertically */
+        }
+        
+    /* Add custom colors for each compartment here */
+    .poster { background-color: #444; } /* Example background color for the poster compartment */
+    .timing { background-color: #555; } /* Example background color for the timing compartment */
+    
+    
+
+
+
+
+     /*  Duplicate 2 */
+ 
+     .container2 {
+      position: absolute;
+      top: 23.8rem; /* Adjusted position */
+      left: 0;
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;        
+      margin: 0;
+    }
+    
+    .movie-box2 {
+        display: flex;
+        width: 90%;
+        color: white; /* White text color */
+    }
+        
+      
+        
+    .details-container2 {
+        width: 100%;
+        padding: 10px;
+        font-family: 'NexaLight';
+        display: flex;
+        flex-direction: column;
+    }
+        
+    .movie-title2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 0.8rem; /* Adjusted font size */
+        font-family: 'NexaExtraBold';
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+            
+    }
+        
+    .movie-time2 {
+        font-family: 'NexaRegular';
+    }
+        
+    .movie-description2 {
+        font-family: 'NexaLight';
+        margin-top: 10px;
+        font-size: 0.6rem; /* Adjusted font size */
+        text-align: center;
+    }
+        
+    .timing-container2 {
+        display: flex;
+        justify-content: space-around; /* Distribute the timing boxes evenly */
+            
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 0.7rem;
+    }
+        
+    .ampm2 {
+        font-family: 'NexaExtraBold';
+        margin-left: 0.2em; 
+    }
+        
+    .time-slot2 {
+        border: 0.5px solid white; /* Decreased opacity of white border for the timing boxes */
+        border-radius: 10px; /* Rounded corners for the timing boxes */
+        width: 30%; /* Width of each timing box */
+        background-color: transparent; /* Transparent background for the timing boxes */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7px 10px;
+        margin: 0 5px; /* Adds a margin of 10 pixels on the left and right */
+        transition: background-color 0.3s; /* Smooth transition for background color */
+    }
+
+      .time-slot2:hover, /* Change color on hover */
+        .time-slot2:active { /* Change color on tap */
+            background-color: white; /* Change button color to white */
+            color: black; /* Change font color to black */
+            
+        }
+        
+     .time-slot2 a {
+            text-decoration: none; /* Remove underline from the links */
+            
+            color: inherit; /* Inherit text color */
+            width: 100%; /* Full width for the links */
+            height: 100%; /* Full height for the links */
+            display: flex; /* Display as flex to center the content vertically */
+            justify-content: center; /* Center the content horizontally */
+            align-items: center; /* Center the content vertically */
+        }
+        
+    /* Add custom colors for each compartment here */
+    .poster2 { background-color: #444; } /* Example background color for the poster compartment */
+    .timing2 { background-color: #555; } /* Example background color for the timing compartment */
+    
+    
+    
+    
+    /*  Duplicate 3 */
+ 
+     .container3 {
+      position: absolute;
+      top: 34.2rem; /* Adjusted position */
+      left: 0;
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;        
+      margin: 0;
+    }
+    
+    .movie-box3 {
+        display: flex;
+        width: 90%;
+        color: white; /* White text color */
+    }
+        
+      
+        
+    .details-container3 {
+        width: 100%;
+        padding: 10px;
+        font-family: 'NexaLight';
+        display: flex;
+        flex-direction: column;
+    }
+        
+    .movie-title3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 0.8rem; /* Adjusted font size */
+        font-family: 'NexaExtraBold';
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+            
+    }
+        
+    .movie-time3 {
+        font-family: 'NexaRegular';
+    }
+        
+    .movie-description3 {
+        font-family: 'NexaLight';
+        margin-top: 10px;
+        font-size: 0.6rem; /* Adjusted font size */
+        text-align: center;
+    }
+        
+    .timing-container3 {
+        display: flex;
+        justify-content: space-around; /* Distribute the timing boxes evenly */            
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 0.7rem;
+    }
+        
+    .ampm3 {
+        font-family: 'NexaExtraBold';
+        margin-left: 0.2em; 
+    }
+        
+    .time-slot3 {
+        border: 0.5px solid white; /* Decreased opacity of white border for the timing boxes */
+        border-radius: 10px; /* Rounded corners for the timing boxes */
+        width: 30%; /* Width of each timing box */
+        background-color: transparent; /* Transparent background for the timing boxes */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7px 10px;
+        margin: 0 5px; /* Adds a margin of 10 pixels on the left and right */
+        transition: background-color 0.3s; /* Smooth transition for background color */
+        
+    }
+
+      .time-slot3:hover, /* Change color on hover */
+        .time-slot3:active { /* Change color on tap */
+            background-color: white; /* Change button color to white */
+            color: black; /* Change font color to black */
+            
+        }
+        
+     .time-slot3 a {
+            text-decoration: none; /* Remove underline from the links */
+            
+            color: inherit; /* Inherit text color */
+            width: 100%; /* Full width for the links */
+            height: 100%; /* Full height for the links */
+            display: flex; /* Display as flex to center the content vertically */
+            justify-content: center; /* Center the content horizontally */
+            align-items: center; /* Center the content vertically */
+        }
+        
+    /* Add custom colors for each compartment here */
+    .poster3 { background-color: #444; } /* Example background color for the poster compartment */
+    .timing3 { background-color: #555; } /* Example background color for the timing compartment */
+
+
+
+/*  Duplicate  4 */
+ 
+     .container4 {
+      position: absolute;
+      top: 44.6rem; /* Adjusted position */
+      left: 0;
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;        
+      margin: 0;
+    }
+    
+    .movie-box4 {
+        display: flex;
+        width: 90%;
+        color: white; /* White text color */
+    }
+        
+      
+        
+    .details-container4 {
+        width: 100%;
+        padding: 10px;
+        font-family: 'NexaLight';
+        display: flex;
+        flex-direction: column;
+    }
+        
+    .movie-title4 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 0.8rem; /* Adjusted font size */
+        font-family: 'NexaExtraBold';
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+            
+    }
+        
+    .movie-time4 {
+        font-family: 'NexaRegular';
+    }
+        
+    .movie-description4 {
+        font-family: 'NexaLight';
+        margin-top: 10px;
+        font-size: 0.6rem; /* Adjusted font size */
+        text-align: center;
+    }
+        
+    .timing-container4 {
+        display: flex;
+        justify-content: space-around; /* Distribute the timing boxes evenly */            
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 0.7rem;
+    }
+        
+    .ampm4 {
+        font-family: 'NexaExtraBold';
+        margin-left: 0.2em; 
+    }
+        
+    .time-slot4 {
+        border: 0.5px solid white; /* Decreased opacity of white border for the timing boxes */
+        border-radius: 10px; /* Rounded corners for the timing boxes */
+        width: 30%; /* Width of each timing box */
+        background-color: transparent; /* Transparent background for the timing boxes */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7px 10px;
+        margin: 0 5px; /* Adds a margin of 10 pixels on the left and right */
+        transition: background-color 0.3s; /* Smooth transition for background color */
+    }
+
+         .time-slot4:hover, /* Change color on hover */
+        .time-slot4:active { /* Change color on tap */
+            background-color: white; /* Change button color to white */
+            color: black; /* Change font color to black */
+            
+        }
+    
+     .time-slot4 a {
+            text-decoration: none; /* Remove underline from the links */
+            
+            color: inherit; /* Inherit text color */
+            width: 100%; /* Full width for the links */
+            height: 100%; /* Full height for the links */
+            display: flex; /* Display as flex to center the content vertically */
+            justify-content: center; /* Center the content horizontally */
+            align-items: center; /* Center the content vertically */
+        }
+        
+    /* Add custom colors for each compartment here */
+    .poster4 { background-color: #444; } /* Example background color for the poster compartment */
+    .timing4 { background-color: #555; } /* Example background color for the timing compartment */
+    
+    /* Style for the divider */
+        .divider2 {
+            width: 70%;
+            border-radius: 50px;            
+            margin: 14px auto; /* Adjust margin as needed */
+            border: none; /* Remove default border */
+            height: 1px; /* Set the height of the line */
+            background-color: rgba(255, 255, 255, 0.4);
+            
+        }
+
+  
+  
+  
+  
+     .container-xyz {
+      position: absolute;
+      top: 38rem;   
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       left: 50%;
+      right: 50%;
       transform: translate(-50%, -50%);
-      width: 100px;
-      height: 100px;
-      background-color: rgba(255, 255, 255, 0.5);
-      border-radius: 50%;
-      cursor: pointer;
+      
+    }
+    
+    figure {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      margin: auto;      
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 54.05%; /* 16:9 aspect ratio */
+      padding-top: 25px;
+      height: 0;      
+      width: 85vw;
+      height: calc(2vh - 2rem);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    figcaption {
+        color: #bdbdbd;
+        background-color: #000;
+        padding-bottom: 0.8rem;        
+        font-family: 'NexaLight';
+        text-transform: uppercase;
+        letter-spacing: 0.08rem;       
+        font-size: 0.75rem;
+    }
+    
+    
+    .arcade {
+      position: absolute;
+      margin-top: 127rem; /* Adjust the top margin as needed */
+      width: 100%;
+      height: 400px; /* Fixed height for the container */
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    #play-button::after {
-      content: '\25B6'; /* Play icon */
-      font-size: 60px;
+    .image-arcade {
+      width: 70%; /* Initial width */
+      max-width: 80%; /* Maximum width */
     }
 
-    #video-popup {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
+    img {
+      display: block;
       width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      z-index: 999;
+      height: auto;
     }
 
-    #video-popup iframe {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      height: calc(100% - 2rem);
-    }
-
-    #close-button {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 24px;
-      color: white;
-      cursor: pointer;
-    }
   </style>
 </head>
-<body>
-  <div id="play-button"></div>
-  <div id="video-popup">
-    <iframe frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="Ghostbusters: Frozen Empire | Official Trailer | Experience It In IMAX®" src="https://www.youtube.com/embed/D4F_PRRc0Tg?si=-P2K-ew2HW6kmFq4&amp;autoplay=1&amp;mute=0&amp;controls=0&amp;origin=https%3A%2F%2Fwww.imax.com&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;enablejsapi=1&amp;widgetid=5"></iframe>
-    <div id="close-button">&times;</div>
-  </div>
-  <script>
-    document.getElementById('play-button').addEventListener('click', function() {
-      var iframe = document.querySelector('#video-popup iframe');
-      var playerWindow = iframe.contentWindow;
-      playerWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-      document.getElementById('video-popup').style.display = 'block';
-    });
 
-    document.getElementById('close-button').addEventListener('click', function() {
-      document.getElementById('video-popup').style.display = 'none';
-    });
-  </script>
+<body>
+    
+    <div class="navbar">
+  <!-- Logo -->
+<img src="https://i.ibb.co/vcJVL8J/IMG-20240316-210800.png" alt="Logo" class="logo">
+
+  <div class="overlay" id="overlay">
+  <div class="menu">
+    <span class="close-btn" onclick="closeMenu()"><i class="fas fa-times"></i></span>
+    <a href="#">Movies</a>
+    <a href="#">Events</a>
+    <a href="#">Opportunity</a>
+    <a href="#">About</a>
+  </div>
+</div>
+
+<div class="open-menu-btn" onclick="openMenu()">
+  <div class="bar"></div>
+  <div class="bar"></div> <!-- Second line -->
+</div>
+
+  </div>
+  
+  
+  <!-- Swiper - Gallery Top -->
+  <div class="swiper-container gallery-top">
+    <div class="swiper-wrapper">
+      <!-- Your slides go here -->
+      <div class="swiper-slide" ><img
+    alt="Responsive Image Example"
+    loading="lazy"
+    decoding="async"
+    srcset="
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4qWh8C49QJqHK8k7Y1PVdp%2F855464204a74aaf1e01215097428c636%2FDune_Zen_Time_hero.png&w=1024&q=75 128w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4qWh8C49QJqHK8k7Y1PVdp%2F855464204a74aaf1e01215097428c636%2FDune_Zen_Time_hero.png&w=1024&q=75 256w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4qWh8C49QJqHK8k7Y1PVdp%2F855464204a74aaf1e01215097428c636%2FDune_Zen_Time_hero.png&w=1024&q=75 360w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4qWh8C49QJqHK8k7Y1PVdp%2F855464204a74aaf1e01215097428c636%2FDune_Zen_Time_hero.png&w=1024&q=75 768w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4qWh8C49QJqHK8k7Y1PVdp%2F855464204a74aaf1e01215097428c636%2FDune_Zen_Time_hero.png&w=1024&q=75 1024w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4qWh8C49QJqHK8k7Y1PVdp%2F855464204a74aaf1e01215097428c636%2FDune_Zen_Time_hero.png&w=1024&q=75 1440w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4qWh8C49QJqHK8k7Y1PVdp%2F855464204a74aaf1e01215097428c636%2FDune_Zen_Time_hero.png&w=1024&q=75 1920w"
+    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.33vw"
+    src="https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4qWh8C49QJqHK8k7Y1PVdp%2F855464204a74aaf1e01215097428c636%2FDune_Zen_Time_hero.png&w=1024&q=75"
+    style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;">
+   
+    
+  
+        <div class="info-container"> <!-- New container for both texts -->
+        <div class="film-info-bg">
+          <span class="film-info">Experience the 2D</span>
+        </div>
+        
+        <div class="playing-info-container">
+        <div class="divider"></div> <!-- Divider for the vertical line -->
+        <div class="playing-info-bg">
+          <span class="playing-info">Now Playing</span>
+        </div>
+      </div>
+      </div>
+  <div class="swiper-slide-text">Dune: Part Two</div>
+
+<div class="button-container">
+    <a href="https://google.com" class="clickable-container">
+      <div class="circle">
+        <div class="play-button"></div>
+      </div>
+      <div class="text-next-to-circle">TRAILER</div>
+    </a>
+
+    <a href="https://google.com" class="clickable-container2">
+      <div class="circle2">
+        <div class="arrow2"></div>
+      </div>
+      <span class="text-next-to-circle2">GET IMAX TICKETS</span>
+    </a>
+  </div>
+  </div>
+    
+      <div class="swiper-slide" ><img
+    alt="Responsive Image Example"
+    loading="lazy"
+    decoding="async"
+    srcset="
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 128w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 256w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 360w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 768w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 1024w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 1440w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 1920w"
+    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.33vw"
+    src="https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75"
+    style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"><div class="swiper-slide-text">Try</div> </div>
+     
+     
+     
+      <div class="swiper-slide" ><img
+    alt="Responsive Image Example"
+    loading="lazy"
+    decoding="async"
+    srcset="
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 128w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 256w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 360w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 768w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 1024w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 1440w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 1920w"
+    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.33vw"
+    src="https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75"
+    style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"><div class="swiper-slide-text">kore</div> </div>
+    
+    
+    
+      <div class="swiper-slide" ><img
+    alt="Responsive Image Example"
+    loading="lazy"
+    decoding="async"
+    srcset="
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4AXvEnpMKSikyIP9rES3ev%2Fe29db497e9a2e6d19840685dc9c424ce%2Fgb_hero_1920___1080.png&w=1024&q=75 128w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4AXvEnpMKSikyIP9rES3ev%2Fe29db497e9a2e6d19840685dc9c424ce%2Fgb_hero_1920___1080.png&w=1024&q=75 256w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4AXvEnpMKSikyIP9rES3ev%2Fe29db497e9a2e6d19840685dc9c424ce%2Fgb_hero_1920___1080.png&w=1024&q=75 360w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4AXvEnpMKSikyIP9rES3ev%2Fe29db497e9a2e6d19840685dc9c424ce%2Fgb_hero_1920___1080.png&w=1024&q=75 768w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4AXvEnpMKSikyIP9rES3ev%2Fe29db497e9a2e6d19840685dc9c424ce%2Fgb_hero_1920___1080.png&w=1024&q=75 1024w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4AXvEnpMKSikyIP9rES3ev%2Fe29db497e9a2e6d19840685dc9c424ce%2Fgb_hero_1920___1080.png&w=1024&q=75 1440w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4AXvEnpMKSikyIP9rES3ev%2Fe29db497e9a2e6d19840685dc9c424ce%2Fgb_hero_1920___1080.png&w=1024&q=75 1920w"
+    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.33vw"
+    src="https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4AXvEnpMKSikyIP9rES3ev%2Fe29db497e9a2e6d19840685dc9c424ce%2Fgb_hero_1920___1080.png&w=1024&q=75"
+    style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"><div class="swiper-slide-text">hauchi ki nai</div> </div>
+    
+    
+    
+    </div>
+  
+    </div>
+   <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper - Gallery Thumbs -->
+  <div class="swiper-container gallery-thumbs">
+    <div class="swiper-wrapper">
+      <!-- Your thumbs go here -->
+      <div class="swiper-slide" ><img
+    alt="Responsive Image Example"
+    loading="lazy"
+    decoding="async"
+    srcset="
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F7nk0vUUuHUv1vXrDJGzuqx%2Fd166b434d4d779f039b9cb8a51262a80%2FD752DUNE2_R0-67_1080x1600px_DUNE2_Master_ENG_V2_R05_UR.jpg&w=1920&q=75 128w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F7nk0vUUuHUv1vXrDJGzuqx%2Fd166b434d4d779f039b9cb8a51262a80%2FD752DUNE2_R0-67_1080x1600px_DUNE2_Master_ENG_V2_R05_UR.jpg&w=1920&q=75 256w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F7nk0vUUuHUv1vXrDJGzuqx%2Fd166b434d4d779f039b9cb8a51262a80%2FD752DUNE2_R0-67_1080x1600px_DUNE2_Master_ENG_V2_R05_UR.jpg&w=1920&q=75 360w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F7nk0vUUuHUv1vXrDJGzuqx%2Fd166b434d4d779f039b9cb8a51262a80%2FD752DUNE2_R0-67_1080x1600px_DUNE2_Master_ENG_V2_R05_UR.jpg&w=1920&q=75 768w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F7nk0vUUuHUv1vXrDJGzuqx%2Fd166b434d4d779f039b9cb8a51262a80%2FD752DUNE2_R0-67_1080x1600px_DUNE2_Master_ENG_V2_R05_UR.jpg&w=1920&q=75 1024w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F7nk0vUUuHUv1vXrDJGzuqx%2Fd166b434d4d779f039b9cb8a51262a80%2FD752DUNE2_R0-67_1080x1600px_DUNE2_Master_ENG_V2_R05_UR.jpg&w=1920&q=75 1440w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F7nk0vUUuHUv1vXrDJGzuqx%2Fd166b434d4d779f039b9cb8a51262a80%2FD752DUNE2_R0-67_1080x1600px_DUNE2_Master_ENG_V2_R05_UR.jpg&w=1920&q=75 1920w"
+    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.33vw"
+    src="https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F7nk0vUUuHUv1vXrDJGzuqx%2Fd166b434d4d779f039b9cb8a51262a80%2FD752DUNE2_R0-67_1080x1600px_DUNE2_Master_ENG_V2_R05_UR.jpg&w=1920&q=75"
+    style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"></div>
+    
+    
+      <div class="swiper-slide" ><img
+    alt="Responsive Image Example"
+    loading="lazy"
+    decoding="async"
+    srcset="
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F1dF9lFFwFOnQGFsVXhwIgL%2Feeadff87f1e6f829a0e77d4f0922d098%2FPM923DOM_70mm_1080x1600px_ENG_DR_V1_R1__2_.jpg&w=1920&q=75 128w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F1dF9lFFwFOnQGFsVXhwIgL%2Feeadff87f1e6f829a0e77d4f0922d098%2FPM923DOM_70mm_1080x1600px_ENG_DR_V1_R1__2_.jpg&w=1920&q=75 256w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F1dF9lFFwFOnQGFsVXhwIgL%2Feeadff87f1e6f829a0e77d4f0922d098%2FPM923DOM_70mm_1080x1600px_ENG_DR_V1_R1__2_.jpg&w=1920&q=75 360w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F1dF9lFFwFOnQGFsVXhwIgL%2Feeadff87f1e6f829a0e77d4f0922d098%2FPM923DOM_70mm_1080x1600px_ENG_DR_V1_R1__2_.jpg&w=1920&q=75 768w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F1dF9lFFwFOnQGFsVXhwIgL%2Feeadff87f1e6f829a0e77d4f0922d098%2FPM923DOM_70mm_1080x1600px_ENG_DR_V1_R1__2_.jpg&w=1920&q=75 1024w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F1dF9lFFwFOnQGFsVXhwIgL%2Feeadff87f1e6f829a0e77d4f0922d098%2FPM923DOM_70mm_1080x1600px_ENG_DR_V1_R1__2_.jpg&w=1920&q=75 1440w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F1dF9lFFwFOnQGFsVXhwIgL%2Feeadff87f1e6f829a0e77d4f0922d098%2FPM923DOM_70mm_1080x1600px_ENG_DR_V1_R1__2_.jpg&w=1920&q=75 1920w"
+    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.33vw"
+    src="https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F1dF9lFFwFOnQGFsVXhwIgL%2Feeadff87f1e6f829a0e77d4f0922d098%2FPM923DOM_70mm_1080x1600px_ENG_DR_V1_R1__2_.jpg&w=1920&q=75"
+    style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"></div>
+    
+    
+      
+ <div class="swiper-slide" ><img
+    alt="Responsive Image Example"
+    loading="lazy"
+    decoding="async"
+    srcset="
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4XvjiJ19CrU1BiWcLA65dW%2F8946df41fa28100eefafaf708505d92b%2FD752GVK_R0-67_1080x1600px_GVK_Master_ENG_R_V1_R1.jpg&w=1920&q=75 128w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4XvjiJ19CrU1BiWcLA65dW%2F8946df41fa28100eefafaf708505d92b%2FD752GVK_R0-67_1080x1600px_GVK_Master_ENG_R_V1_R1.jpg&w=1920&q=75 256w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4XvjiJ19CrU1BiWcLA65dW%2F8946df41fa28100eefafaf708505d92b%2FD752GVK_R0-67_1080x1600px_GVK_Master_ENG_R_V1_R1.jpg&w=1920&q=75 360w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4XvjiJ19CrU1BiWcLA65dW%2F8946df41fa28100eefafaf708505d92b%2FD752GVK_R0-67_1080x1600px_GVK_Master_ENG_R_V1_R1.jpg&w=1920&q=75 768w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4XvjiJ19CrU1BiWcLA65dW%2F8946df41fa28100eefafaf708505d92b%2FD752GVK_R0-67_1080x1600px_GVK_Master_ENG_R_V1_R1.jpg&w=1920&q=75 1024w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4XvjiJ19CrU1BiWcLA65dW%2F8946df41fa28100eefafaf708505d92b%2FD752GVK_R0-67_1080x1600px_GVK_Master_ENG_R_V1_R1.jpg&w=1920&q=75 1440w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4XvjiJ19CrU1BiWcLA65dW%2F8946df41fa28100eefafaf708505d92b%2FD752GVK_R0-67_1080x1600px_GVK_Master_ENG_R_V1_R1.jpg&w=1920&q=75 1920w"
+    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.33vw"
+    src="https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4XvjiJ19CrU1BiWcLA65dW%2F8946df41fa28100eefafaf708505d92b%2FD752GVK_R0-67_1080x1600px_GVK_Master_ENG_R_V1_R1.jpg&w=1920&q=75"
+    style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"></div>
 </body>
+
+
+      
+ <div class="swiper-slide" ><img
+    alt="Responsive Image Example"
+    loading="lazy"
+    decoding="async"
+    srcset="
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F3vCHo7EwyIBmqPam3d1DiT%2F5a7efc3fe3389fb121e526b41ffca0f3%2FPM1049DOM_Excl_1080x1600px_ENG_DR_V1_R1.jpg&w=1920&q=75 128w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F3vCHo7EwyIBmqPam3d1DiT%2F5a7efc3fe3389fb121e526b41ffca0f3%2FPM1049DOM_Excl_1080x1600px_ENG_DR_V1_R1.jpg&w=1920&q=75 256w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F3vCHo7EwyIBmqPam3d1DiT%2F5a7efc3fe3389fb121e526b41ffca0f3%2FPM1049DOM_Excl_1080x1600px_ENG_DR_V1_R1.jpg&w=1920&q=75 360w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F3vCHo7EwyIBmqPam3d1DiT%2F5a7efc3fe3389fb121e526b41ffca0f3%2FPM1049DOM_Excl_1080x1600px_ENG_DR_V1_R1.jpg&w=1920&q=75 768w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F3vCHo7EwyIBmqPam3d1DiT%2F5a7efc3fe3389fb121e526b41ffca0f3%2FPM1049DOM_Excl_1080x1600px_ENG_DR_V1_R1.jpg&w=1920&q=75 1024w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F3vCHo7EwyIBmqPam3d1DiT%2F5a7efc3fe3389fb121e526b41ffca0f3%2FPM1049DOM_Excl_1080x1600px_ENG_DR_V1_R1.jpg&w=1920&q=75 1440w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F3vCHo7EwyIBmqPam3d1DiT%2F5a7efc3fe3389fb121e526b41ffca0f3%2FPM1049DOM_Excl_1080x1600px_ENG_DR_V1_R1.jpg&w=1920&q=75 1920w"
+    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.33vw"
+    src="https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F3vCHo7EwyIBmqPam3d1DiT%2F5a7efc3fe3389fb121e526b41ffca0f3%2FPM1049DOM_Excl_1080x1600px_ENG_DR_V1_R1.jpg&w=1920&q=75"
+    style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"></div>
+    
+     <div class="text-below-thumb1"><p>Movie Showtimes</p>
+</div>
+      
+     <div class="container">
+        <div class="movie-box">
+            <div class="poster">
+                <!-- Movie poster will be displayed here -->
+            </div>
+            <div class="details-container">
+                <div class="movie-title">
+                    <span>Yodha</span><span class="movie-time">1hr 24min</span>
+                </div>
+                <div class="timing-container">
+                    <div class="time-slot"><a href="#">10:30 <span class="ampm">AM</span></a></div>
+                    <div class="time-slot"><a href="https://in.bookmyshow.com/koraput/seat-layout/ET00318073/MHCK/904/20240319">2:45 <span class="ampm">PM</span></a></div>
+                    <div class="time-slot"><a href="#">7:00 <span class="ampm">PM</span></a></div>
+                </div>
+                <div class="movie-description">
+                    An Aeroplane hijack where a soldier helps the passenger and fight against the terrorist. But the damage to the flight engine made it very tough to survive the situation.
+                </div>
+                <!-- Divider -->
+                <hr class="divider2">
+            </div>
+        </div>
+    </div>
+   
+    
+    <!-- Duplicate of container -->
+    <div class="container2">
+        <div class="movie-box2">
+            <div class="poster2">
+                <!-- Movie poster will be displayed here -->
+            </div>
+            <div class="details-container2">
+                <div class="movie-title2">
+                    <span>Yodha</span><span class="movie-time2">1hr 24min</span>
+                </div>
+                <div class="timing-container2">
+                    <div class="time-slot2"><a href="#">10:30 <span class="ampm">AM</span></a></div>
+                    <div class="time-slot2"><a href="https://in.bookmyshow.com/koraput/seat-layout/ET00318073/MHCK/904/20240319">2:45 <span class="ampm2">PM</span></a></div>
+                    <div class="time-slot2"><a href="#">7:00 <span class="ampm2">PM</span></a></div>
+                </div>
+                <div class="movie-description2">
+                    An Aeroplane hijack where a soldier helps the passenger and fight against the terrorist. But the damage to the flight engine made it very tough to survive the situation.
+                </div>
+                <!-- Divider -->
+                <hr class="divider2">
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="container3">
+    <div class="movie-box3">
+        <div class="poster3">
+            <!-- Movie poster will be displayed here -->
+        </div>
+        <div class="details-container3">
+            <div class="movie-title3">
+                <span>Yodha</span><span class="movie-time3">1hr 24min</span>
+            </div>
+            <div class="timing-container3">
+                <div class="time-slot3"><a href="#">10:30 <span class="ampm3">AM</span></a></div>
+                <div class="time-slot3"><a href="https://in.bookmyshow.com/koraput/seat-layout/ET00318073/MHCK/904/20240319">2:45 <span class="ampm3">PM</span></a></div>
+                <div class="time-slot3"><a href="#">7:00 <span class="ampm3">PM</span></a></div>
+            </div>
+            <div class="movie-description3">
+                An Aeroplane hijack where a soldier helps the passenger and fight against the terrorist. But the damage to the flight engine made it very tough to survive the situation.
+            </div>
+            <!-- Divider -->
+                <hr class="divider2">
+        </div>
+    </div>
+</div>
+
+<div class="container4">
+    <div class="movie-box4">
+        <div class="poster4">
+            <!-- Movie poster will be displayed here -->
+        </div>
+        <div class="details-container4">
+            <div class="movie-title4">
+                <span>Yodha</span><span class="movie-time4">1hr 24min</span>
+            </div>
+            <div class="timing-container4">
+                <div class="time-slot4"><a href="#">10:30 <span class="ampm4">AM</span></a></div>
+                <div class="time-slot4"><a href="https://in.bookmyshow.com/koraput/seat-layout/ET00318073/MHCK/904/20240319">2:45 <span class="ampm4">PM</span></a></div>
+                <div class="time-slot4"><a href="#">7:00 <span class="ampm4">PM</span></a></div>
+            </div>
+            <div class="movie-description4">
+                An Aeroplane hijack where a soldier helps the passenger and fight against the terrorist. But the damage to the flight engine made it very tough to survive the situation.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ <!-- Text Below Thumbs -->
+     <div class="text-below-thumb2"><p>Coming Soon to MEGHRAJ Theatres</p>
+<div class="container-xyz">
+  <div class="image-container">    
+    <!-- YouTube embed iframe -->
+    <figure>
+      <div class="video-container">
+        <iframe  src="https://www.youtube.com/embed/Yxe-mIVIwM4?si=d1uQaOtm8TmHchcg&autoplay=1&mute=1&controls=0&loop=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <figcaption>Ghostbusters: Frozen Empire</figcaption>
+    </figure>
+
+    <figure>
+      <div class="video-container">
+        <iframe  src="https://www.youtube.com/embed/_inKs4eeHiI?si=E91Qfvm6c1qJtUhP&autoplay=1&mute=1&controls=0&loop=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+      </div>
+      <figcaption>The Fall Guy</figcaption>
+    </figure>
+
+    <figure>
+      <div class="video-container">        
+        <iframe  src="https://www.youtube.com/embed/3AuB8RTfBJc?si=LP6idc7Xe5BShWFa&autoplay=1&mute=1&controls=0&loop=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        
+      </div>
+      <figcaption>Civil War</figcaption>
+    </figure>
+
+    <figure>
+      <div class="video-container">
+        <iframe  src="https://www.youtube.com/embed/qEVUtrk8_B4?si=Ill6ezyfJ1VBYd9z&autoplay=1&mute=1&controls=0&loop=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <figcaption>Kingdom of the Planet of the Apes</figcaption>
+    </figure>
+    </div>
+  </div>
+ </div>
+
+<!-- Text Below Thumbs -->
+     <div class="text-below-thumb3"><p>Arcade</p></div>
+<div class="arcade">
+    <div class="image-arcade">
+      <img src="https://dl.dropboxusercontent.com/scl/fi/r00vzsbstbmw985cm71v8/InShot_20240321_200446468.jpg?rlkey=r4kgky2vn1wgzptfawgt3lecu&dl=0" alt="Resizable Image">
+    </div>
+  </div>
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+  // Initialize thumbnail Swiper
+  var galleryThumbs = new Swiper('.gallery-thumbs', {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    loop: true,
+    freeMode: true,
+    loopedSlides: 5,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    observer: true,
+    observeParents: true
+  });
+
+  // Initialize main Swiper
+  var galleryTop = new Swiper('.gallery-top', {
+    spaceBetween: 10,
+    loop: true,
+    loopedSlides: 5,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    thumbs: {
+      swiper: galleryThumbs,
+    },
+    autoplay: {
+      delay: 5000, // 5 seconds
+      disableOnInteraction: false
+    },
+    observer: true,
+    observeParents: true
+  });
+
+  // Event listener for slide change
+  galleryTop.on('slideChange', function () {
+    let activeIndex = this.activeIndex;
+    let thumbsSwiper = this.thumbs.swiper;
+    if (thumbsSwiper) {
+      // Remove active class from all thumbs
+      Array.from(thumbsSwiper.slides).forEach(slide => {
+        slide.classList.remove('thumb-active');
+      });
+      // Add active class to current thumb
+      let currentThumb = thumbsSwiper.slides[activeIndex];
+      if (currentThumb) {
+        currentThumb.classList.add('thumb-active');
+      }
+    }
+  });
+
+  // Sync autoplay between main and thumbs galleries
+  galleryTop.on('autoplay', function() {
+    galleryThumbs.autoplay.start();
+  });
+  galleryThumbs.on('autoplay', function() {
+    galleryTop.autoplay.start();
+  });
+</script>
+
+<script>
+  function openMenu() {
+    document.getElementById("overlay").style.height = "100vh";
+    document.getElementById("overlay").style.opacity = "1";
+  }
+
+  function closeMenu() {
+    document.getElementById("overlay").style.height = "0";
+    document.getElementById("overlay").style.opacity = "0";
+  }
+</script>
+
+</body>
+
 </html>
+
+
