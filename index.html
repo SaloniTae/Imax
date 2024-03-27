@@ -66,6 +66,7 @@ body {
   margin-right: auto;
   position: relative;
   overflow-x: clip;
+  
 }
 
 /* Slide Styles */
@@ -169,6 +170,9 @@ body {
   margin: 0 0.625rem; /* Converted from 10px */
   margin-left: 0.0625rem;
 }
+
+
+
 
 .playing-info {
   margin-top: 13.75rem; /* Converted from 220px */
@@ -398,12 +402,12 @@ body {
   box-sizing: border-box;
   font-family: 'NexaRegular';
   font-size: 1.55rem;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
 }
 
 .text-below-thumb3 {
   position: absolute;
-  top: 124.6rem;
+  top: 130.6rem;
   left: 0;
   width: 100%;
   height: auto;
@@ -413,11 +417,42 @@ body {
   box-sizing: border-box;
   font-family: 'NexaRegular';
   font-size: 1.55rem;
-  letter-spacing: 0.225rem;
+  letter-spacing: 0.0625rem;
   text-transform: uppercase;
 }
 
-      
+ .text-below-thumb2half {
+  position: absolute;
+  top: 123.6rem;
+  left: 0;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  color: #fff; /* Text color */
+  padding: 5px; /* Padding around the text */
+  box-sizing: border-box;
+  font-family: 'NexaExtraBold';
+  font-size: 1.5rem;
+  letter-spacing: 0.0625rem;
+  line-height: 0.95;
+}     
+
+.text-below-thumb4 {
+  position: absolute;
+  top: 160.6rem;
+  left: 0;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  color: #fff; /* Text color */
+  padding: 5px; /* Padding around the text */
+  box-sizing: border-box;
+  font-family: 'NexaRegular';
+  font-size: 1.55rem;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+}
+
   .container {
       position: absolute;
       top: 13.6rem; /* Adjusted position */
@@ -901,7 +936,7 @@ body {
     
     .arcade {
       position: absolute;
-      margin-top: 127rem; /* Adjust the top margin as needed */
+      margin-top: 133rem; /* Adjust the top margin as needed */
       width: 100%;
       height: 400px; /* Fixed height for the container */
       display: flex;
@@ -919,6 +954,32 @@ body {
       width: 100%;
       height: auto;
     }
+    
+    .arcade-description {
+        position: absolute;
+        margin-top: 25rem;
+        font-family: 'NexaRegular';
+        font-size: 0.6rem; /* Adjusted font size */
+        text-align: center;
+        width: 90%;
+    }
+
+    .more {
+        font-family: 'NexaExtraBold';
+        margin-left: 0.2em; 
+        
+    }
+    
+    .text-below-thumb4 p {
+  text-transform: uppercase; 
+}
+
+.text-below-thumb4 .more {
+  text-transform: lowercase; 
+  
+  
+}
+
 
   </style>
 </head>
@@ -1268,12 +1329,25 @@ body {
  </div>
 
 <!-- Text Below Thumbs -->
+     <div class="text-below-thumb2half"><p>The memories we make with our family is everything.
+</p></div>
+
+    
+<!-- Text Below Thumbs -->
      <div class="text-below-thumb3"><p>Arcade</p></div>
-<div class="arcade">
+<div class="arcade">    
     <div class="image-arcade">
       <img src="https://dl.dropboxusercontent.com/scl/fi/r00vzsbstbmw985cm71v8/InShot_20240321_200446468.jpg?rlkey=r4kgky2vn1wgzptfawgt3lecu&dl=0" alt="Resizable Image">
     </div>
+     
+    <div class="arcade-description">
+                In Meghraj, We features the latest and most exciting games.<br> The game zone is equipped with state-of-the-art gaming consoles, high-definition screens, and comfortable seating, providing an immersive gaming experience for all.
+            </div>        
   </div>
+  <div class="text-below-thumb4"><p>Events<span class="more">and more.</span></p></div>
+  
+  
+   
   <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
