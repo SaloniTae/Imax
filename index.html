@@ -9,18 +9,24 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Demo styles -->
-  <style>
-      
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://db.onlinewebfonts.com/c/cefa2bca89ec27b6b9c51c215bce8ba2?family=Nexa-Regular" rel="stylesheet">
+   
+    <style>
+        
+       @font-face {
+    font-family: 'NexaBold';    src:url('https://dl.dropboxusercontent.com/scl/fi/ajl2kmwyuhg9wh1cnqdy8/NexaBold.ttf.woff?rlkey=s3hwdzo62et10eij2iwz01jkj&dl=0') format('woff'),
+    font-weight: normal;
+    font-style: normal;
+}
+
       @font-face {
       font-family: 'Polly-Regular';
       src: url('https://dl.dropboxusercontent.com/scl/fi/h3jo5p47lh2oul5mky6c2/Polly-Regular.otf?rlkey=tcpku2avzd8bvsz0ppewzlh47&dl=0') format('truetype');
     }
       
-      @font-face {
-      font-family: 'NexaBold';
-      src: url('https://dl.dropboxusercontent.com/scl/fi/t3bdfdb4kmudm7gs5dm41/NexaText-Trial-Bold.ttf?rlkey=8ndeqdpbjbom7vu05b930mao6&dl=0') format('truetype');
-    }
+
     
       @font-face {
       font-family: 'NexaExtraBold';
@@ -42,6 +48,10 @@
 body {
   position: relative;
   height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;  
   
 }
 
@@ -51,8 +61,7 @@ body {
   background: #000;
   font-size: 0.875rem; /* Converted from 14px */
   color: #fff;
-  margin: 0;
-  padding: 0;
+  
   
   
 }
@@ -63,12 +72,18 @@ body {
   height: 56.25vw; /* Converted from 56.25vw */
   max-height: 60vh;
   margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  overflow-x: clip;
+  margin-right: auto; 
+  position: relative; 
+  
   
 }
 
+
+.custom-swiper-container {
+    overflow-x: clip;
+  }
+  
+  
 /* Slide Styles */
 .swiper-slide {
   background-size: cover;
@@ -274,6 +289,7 @@ body {
   
    .swiper-pagination {
       margin-bottom: 35.4vh;
+      
   }
   
   .swiper-pagination-bullet {
@@ -283,6 +299,7 @@ body {
   opacity: 0.6; /* Bullet opacity */
   border-radius: 0px; /* Bullet border radius */
   margin: 0 3px; /* Horizontal margin between bullets */
+  
 }
 
 
@@ -358,13 +375,20 @@ body {
     padding: 4px;
   }
 
-  .open-menu-btn {
-    position: fixed;
-    top: 20px;
+  .navbar {
+    position: relative; /* Add position relative */
+}
+
+.open-menu-btn {
+    position: absolute; /* Change position to absolute */
+    top: 50%; /* Position relative to the navbar */
     right: 20px;
+    transform: translateY(-50%); /* Adjust vertically to center */
     color: #fff;
     font-size: 24px;
-  }
+    z-index: 1; /* Ensure it's above the logo */
+}
+
 
   .bar {
     width: 50px;
@@ -981,10 +1005,185 @@ body {
 }
 
 
+      
+      
+        .divider-footer {
+            width: 100%;
+            border-radius: 50px;            
+            margin: 14px auto; /* Adjust margin as needed */
+            border: none; /* Remove default border */
+            height: 1px; /* Set the height of the line */
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+       
+       
+        .social-icons {
+            padding: 1.6rem 0 0;
+            font-size: 2rem;
+            letter-spacing: 0.9rem;
+        }
+        
+        .footer-section3 a {
+           color: #fff; /* Change link color */
+           font-family: "Nexa-Regular";
+           letter-spacing: 0.07rem;           
+           text-decoration: none; /* Remove underline */
+           font-size: 14px; /* Change font size */
+           margin-right: 10px; /* Adjust spacing between links */
+}
+
+       .footer-section3 a:hover {
+          text-decoration: none; /* Add underline on hover */
+}
+
+
+        /* Add shadow below icons and logo */
+.social-icons ion-icon,
+.footer-section img {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+
+        
+        /* Footer styles */
+        .footer {            
+            position: absolute;
+            background-color: #006fcd;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 200rem;           
+            top: 0;            
+            width: 100vw;             
+            box-sizing: border-box;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .footer-section3 a {
+            font-size: 0.7rem;
+        }
+
+        /* Remove underlines */
+        .footer a:hover {
+            text-decoration: none;
+        }
+
+        /* Centering content */
+        .footer-section:not(:nth-child(2)) {
+            text-align: center;
+        }
+
+        .footer-section0 {
+            text-align: left;
+            font-family: 'NexaBold';
+            letter-spacing: 0.06rem;
+        }
+
+
+        /* OUR COMPANY and MORE styles */
+        .toggle {
+            display: inline-block;            
+            margin-bottom: 10px;            
+            color: #fff;
+            text-transform: uppercase;
+            text-align: left;
+            cursor: none;
+            width: 100%;
+}
+
+        .toggle:hover {                    
+        text-decoration: none; /* Add this line to remove underlines */ }
+
+        .toggle .icon {
+            margin-left: 5px;
+            font-size: 18px; /* Adjust the size of the "+" and "-" symbols */
+            
+        }
+
+        .hidden {
+            display: none;
+            
+        }
+
+        /* List styles */
+        ul {
+            list-style: none;
+            padding: 0;
+            
+        }
+
+        ul li {
+            margin-bottom: 5px;
+            font-family: 'NexaRegular';
+            letter-spacing: 0.04rem;
+            padding: 0.6rem;
+        }
+        
+        .logo-img {
+           width: 160px; /* Adjust the width as needed */
+           display: block; 
+           margin: 0 auto;
+     }
+         
+
+
+        /* Media queries for responsiveness */
+        @media screen and (max-width: 600px) {
+            .footer {
+                font-size: 14px;
+            }
+        
+
   </style>
 </head>
 
 <body>
+  
+    <footer class="footer">
+        <div class="footer-section0">
+            <hr class="divider-footer">
+            <div class="toggle" onclick="toggleContent(this)">OUR COMPANY <span class="icon">+</span></div>           
+            <div class="hidden">
+                <ul>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Job Opportunities</a></li>
+                    <li><a href="#">Contact Info</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="divider-footer">
+        <div class="footer-section0">
+            <div class="toggle" onclick="toggleContent(this)">MORE <span class="icon">+</span></div>
+            <div class="hidden">
+                <ul>
+                    <li><a href="#">Inside Meghraj Cinemaz</a></li>
+                    <li><a href="#">Advertise With Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="divider-footer">    
+
+        <div class="footer-section">
+            <img class="logo-img" src="https://i.ibb.co/0Z7nBHq/Photo-Room-20240330-225825.png" alt="IMAX Logo">
+
+            <div class="social-icons">
+               <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>              
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            </div>
+        </div>
+   
+        <div class="footer-section3">
+          <a><p>© 2024 MEGHRAJ CINEMAZ
+         <br><br>designed by<br></a> <a>i7NX</a><br><br> <a href="#">Terms of Use</a><a href="#">Privacy Policy</a><a href="#">Cookies Policy</a></p> </div>
+    </footer>
+    
     
     <div class="navbar">
   <!-- Logo -->
@@ -1009,7 +1208,7 @@ body {
   
   
   <!-- Swiper - Gallery Top -->
-  <div class="swiper-container gallery-top">
+  <div class="swiper-container gallery-top custom-swiper-container">
     <div class="swiper-wrapper">
       <!-- Your slides go here -->
       <div class="swiper-slide" ><img
@@ -1042,6 +1241,104 @@ body {
         </div>
       </div>
       </div>
+ 
+ 
+ 
+  <div class="swiper-slide-text">Dune: Part Two</div>
+
+<div class="button-container">
+    <a href="https://google.com" class="clickable-container">
+      <div class="circle">
+        <div class="play-button"></div>
+      </div>
+      <div class="text-next-to-circle">TRAILER</div>
+    </a>
+
+    <a href="https://google.com" class="clickable-container2">
+      <div class="circle2">
+        <div class="arrow2"></div>
+      </div>
+      <span class="text-next-to-circle2">GET IMAX TICKETS</span>
+    </a>
+  </div>
+  </div>
+       
+  
+  
+  
+      <div class="swiper-slide" ><img
+    alt="Responsive Image Example"
+    loading="lazy"
+    decoding="async"
+    srcset="
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 128w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 256w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 360w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 768w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 1024w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 1440w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 1920w"
+    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.33vw"
+    src="https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75"
+    style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;">
+          <div class="info-container"> <!-- New container for both texts -->
+        <div class="film-info-bg">
+          <span class="film-info">Experience the 2D</span>
+        </div>
+        
+        <div class="playing-info-container">
+        <div class="divider"></div> <!-- Divider for the vertical line -->
+        <div class="playing-info-bg">
+          <span class="playing-info">Now Playing</span>
+        </div>
+      </div>
+      </div>
+  <div class="swiper-slide-text">Dune: Part Two</div>
+
+<div class="button-container">
+    <a href="https://google.com" class="clickable-container">
+      <div class="circle">
+        <div class="play-button"></div>
+      </div>
+      <div class="text-next-to-circle">TRAILER</div>
+    </a>
+
+    <a href="https://google.com" class="clickable-container2">
+      <div class="circle2">
+        <div class="arrow2"></div>
+      </div>
+      <span class="text-next-to-circle2">GET IMAX TICKETS</span>
+    </a>
+  </div>
+  </div>
+  
+      <div class="swiper-slide" ><img
+    alt="Responsive Image Example"
+    loading="lazy"
+    decoding="async"
+    srcset="
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 128w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 256w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 360w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 768w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 1024w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 1440w,
+      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 1920w"
+    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.33vw"
+    src="https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75"
+    style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;">
+     <div class="info-container"> <!-- New container for both texts -->
+        <div class="film-info-bg">
+          <span class="film-info">Experience the 2D</span>
+        </div>
+        
+        <div class="playing-info-container">
+        <div class="divider"></div> <!-- Divider for the vertical line -->
+        <div class="playing-info-bg">
+          <span class="playing-info">Now Playing</span>
+        </div>
+      </div>
+      </div>
   <div class="swiper-slide-text">Dune: Part Two</div>
 
 <div class="button-container">
@@ -1061,40 +1358,6 @@ body {
   </div>
   </div>
     
-      <div class="swiper-slide" ><img
-    alt="Responsive Image Example"
-    loading="lazy"
-    decoding="async"
-    srcset="
-      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 128w,
-      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 256w,
-      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 360w,
-      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 768w,
-      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 1024w,
-      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 1440w,
-      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75 1920w"
-    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.33vw"
-    src="https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F40JHuGWo9JhwEa5df6jOCv%2F1c5f7f0c176f5d35e520763b7d4c33ca%2FZen_1920___1080.jpg&w=1920&q=75"
-    style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"><div class="swiper-slide-text">Try</div> </div>
-     
-     
-     
-      <div class="swiper-slide" ><img
-    alt="Responsive Image Example"
-    loading="lazy"
-    decoding="async"
-    srcset="
-      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 128w,
-      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 256w,
-      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 360w,
-      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 768w,
-      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 1024w,
-      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 1440w,
-      https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75 1920w"
-    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.33vw"
-    src="https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F6R3LwezUu5Wl7Pq3YOSV2n%2Fda9c27823cefe09e20bd846c7314b06f%2FGxK_homepage_hero_1920___1080.png&w=1024&q=75"
-    style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"><div class="swiper-slide-text">kore</div> </div>
-    
     
     
       <div class="swiper-slide" ><img
@@ -1111,13 +1374,40 @@ body {
       https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4AXvEnpMKSikyIP9rES3ev%2Fe29db497e9a2e6d19840685dc9c424ce%2Fgb_hero_1920___1080.png&w=1024&q=75 1920w"
     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.33vw"
     src="https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4AXvEnpMKSikyIP9rES3ev%2Fe29db497e9a2e6d19840685dc9c424ce%2Fgb_hero_1920___1080.png&w=1024&q=75"
-    style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"><div class="swiper-slide-text">hauchi ki nai</div> </div>
-    
-    
-    
+    style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;">
+     <div class="info-container"> <!-- New container for both texts -->
+        <div class="film-info-bg">
+          <span class="film-info">Experience the 2D</span>
+        </div>
+        
+        <div class="playing-info-container">
+        <div class="divider"></div> <!-- Divider for the vertical line -->
+        <div class="playing-info-bg">
+          <span class="playing-info">Now Playing</span>
+        </div>
+      </div>
+      </div>
+  <div class="swiper-slide-text">Dune: Part Two</div>
+
+<div class="button-container">
+    <a href="https://google.com" class="clickable-container">
+      <div class="circle">
+        <div class="play-button"></div>
+      </div>
+      <div class="text-next-to-circle">TRAILER</div>
+    </a>
+
+    <a href="https://google.com" class="clickable-container2">
+      <div class="circle2">
+        <div class="arrow2"></div>
+      </div>
+      <span class="text-next-to-circle2">GET IMAX TICKETS</span>
+    </a>
+  </div>
+  </div>    
+    </div>  
     </div>
-  
-    </div>
+    
    <div class="swiper-pagination"></div>
   </div>
 
@@ -1175,7 +1465,6 @@ body {
     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.33vw"
     src="https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F4XvjiJ19CrU1BiWcLA65dW%2F8946df41fa28100eefafaf708505d92b%2FD752GVK_R0-67_1080x1600px_GVK_Master_ENG_R_V1_R1.jpg&w=1920&q=75"
     style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"></div>
-</body>
 
 
       
@@ -1194,7 +1483,7 @@ body {
     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.33vw"
     src="https://www.imax.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fc4ucztjx9pmu%2F3vCHo7EwyIBmqPam3d1DiT%2F5a7efc3fe3389fb121e526b41ffca0f3%2FPM1049DOM_Excl_1080x1600px_ENG_DR_V1_R1.jpg&w=1920&q=75"
     style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"></div>
-    
+   
      <div class="text-below-thumb1"><p>Movie Showtimes</p>
 </div>
       
@@ -1208,12 +1497,16 @@ body {
                     <span>Yodha</span><span class="movie-time">1hr 24min</span>
                 </div>
                 <div class="timing-container">
-                    <div class="time-slot"><a href="#">10:30 <span class="ampm">AM</span></a></div>
-                    <div class="time-slot"><a href="https://in.bookmyshow.com/koraput/seat-layout/ET00318073/MHCK/904/20240319">2:45 <span class="ampm">PM</span></a></div>
-                    <div class="time-slot"><a href="#">7:00 <span class="ampm">PM</span></a></div>
+                    <div class="time-slot"><a href="#" onclick="openLink(event)">10:30 <span class="ampm">AM</span></a></div>
+                    <div class="time-slot">
+    <a href="https://google.com" onclick="openLink(event)">2:45 <span class="ampm">PM</span></a>
+</div>
+
+                    <div class="time-slot"><a href="#" onclick="openLink(event)">7:00 <span class="ampm">PM</span></a></div>
                 </div>
                 <div class="movie-description">
                     An Aeroplane hijack where a soldier helps the passenger and fight against the terrorist. But the damage to the flight engine made it very tough to survive the situation.
+                         
                 </div>
                 <!-- Divider -->
                 <hr class="divider2">
@@ -1233,9 +1526,9 @@ body {
                     <span>Yodha</span><span class="movie-time2">1hr 24min</span>
                 </div>
                 <div class="timing-container2">
-                    <div class="time-slot2"><a href="#">10:30 <span class="ampm">AM</span></a></div>
-                    <div class="time-slot2"><a href="https://in.bookmyshow.com/koraput/seat-layout/ET00318073/MHCK/904/20240319">2:45 <span class="ampm2">PM</span></a></div>
-                    <div class="time-slot2"><a href="#">7:00 <span class="ampm2">PM</span></a></div>
+                    <div class="time-slot2"><a href="#" onclick="openLink(event)">10:30 <span class="ampm">AM</span></a></div>
+                    <div class="time-slot2"><a href="https://in.bookmyshow.com/koraput/seat-layout/ET00318073/MHCK/904/20240319" onclick="openLink(event)">2:45 <span class="ampm2">PM</span></a></div>
+                    <div class="time-slot2"><a href="https://google.com" onclick="openLink(event)">7:00 <span class="ampm2">PM</span></a></div>
                 </div>
                 <div class="movie-description2">
                     An Aeroplane hijack where a soldier helps the passenger and fight against the terrorist. But the damage to the flight engine made it very tough to survive the situation.
@@ -1257,9 +1550,9 @@ body {
                 <span>Yodha</span><span class="movie-time3">1hr 24min</span>
             </div>
             <div class="timing-container3">
-                <div class="time-slot3"><a href="#">10:30 <span class="ampm3">AM</span></a></div>
-                <div class="time-slot3"><a href="https://in.bookmyshow.com/koraput/seat-layout/ET00318073/MHCK/904/20240319">2:45 <span class="ampm3">PM</span></a></div>
-                <div class="time-slot3"><a href="#">7:00 <span class="ampm3">PM</span></a></div>
+                <div class="time-slot3"><a href="#" onclick="openLink(event)">10:30 <span class="ampm3">AM</span></a></div>
+                <div class="time-slot3"><a href="https://in.bookmyshow.com/koraput/seat-layout/ET00318073/MHCK/904/20240319" onclick="openLink(event)">2:45 <span class="ampm3">PM</span></a></div>
+                <div class="time-slot3"><a href="#" onclick="openLink(event)">7:00 <span class="ampm3">PM</span></a></div>
             </div>
             <div class="movie-description3">
                 An Aeroplane hijack where a soldier helps the passenger and fight against the terrorist. But the damage to the flight engine made it very tough to survive the situation.
@@ -1280,9 +1573,9 @@ body {
                 <span>Yodha</span><span class="movie-time4">1hr 24min</span>
             </div>
             <div class="timing-container4">
-                <div class="time-slot4"><a href="#">10:30 <span class="ampm4">AM</span></a></div>
-                <div class="time-slot4"><a href="https://in.bookmyshow.com/koraput/seat-layout/ET00318073/MHCK/904/20240319">2:45 <span class="ampm4">PM</span></a></div>
-                <div class="time-slot4"><a href="#">7:00 <span class="ampm4">PM</span></a></div>
+                <div class="time-slot4"><a href="#" onclick="openLink(event)">10:30 <span class="ampm4">AM</span></a></div>
+                <div class="time-slot4"><a href="https://in.bookmyshow.com/koraput/seat-layout/ET00318073/MHCK/904/20240319" onclick="openLink(event)">2:45 <span class="ampm4">PM</span></a></div>
+                <div class="time-slot4"><a href="#" onclick="openLink(event)">7:00 <span class="ampm4">PM</span></a></div>
             </div>
             <div class="movie-description4">
                 An Aeroplane hijack where a soldier helps the passenger and fight against the terrorist. But the damage to the flight engine made it very tough to survive the situation.
@@ -1346,6 +1639,27 @@ body {
   </div>
   <div class="text-below-thumb4"><p>Events<span class="more">and more.</span></p></div>
   
+  
+  
+    <!-- Include Font Awesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    
+    <script>
+        function toggleContent(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('.icon');
+
+            content.classList.toggle('hidden');
+
+            // Toggle the icon text content between "+" and "-"
+            if (content.classList.contains('hidden')) {
+                icon.textContent = '+';
+            } else {
+                icon.textContent = '-';
+            }
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   
    
   <!-- Swiper JS -->
@@ -1432,6 +1746,13 @@ body {
   }
 </script>
 
+<script>
+    function openLink(event) {
+    event.preventDefault();
+    window.location.href = event.target.href;
+}
+
+</script>
 </body>
 
 </html>
